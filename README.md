@@ -1,5 +1,6 @@
-####################################          IN THE NAME OF ALLAH      ####################################
+####################################          IN THE NAME OF God      ####################################
 
-*Start of Project: 7/19/2019
-*Name: pchat
-*Description: A chat application written in Angular for fornt-end and NestJs for back-end and SqlServer for Database and Flutter for Android & iOs and Electron for desktop.
+*Start of Project: 11/20/2019
+*Name: ptrip
+*Description: A Website for Trip & Tour, Written in Nest.js for backend, Angular for front-end currently.
+*Goals: Flutter for mobile applications and Electron.js for desktop.
