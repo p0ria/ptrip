@@ -1,0 +1,55 @@
+<div class="trips">
+  <div class="trips-menu">
+    <div class="menu-item menu-item-spring"
+         [sessionType]="getSession(0)"
+         (click)="selectedSession = getSession(0)">
+      <h1 class="item-title">
+        {{ getSession(0) | sessionName }}
+      </h1>
+    </div>
+    <div class="menu-item menu-item-summer"
+         [sessionType]="getSession(1)"
+         (click)="selectedSession = getSession(1)">
+      <h1 class="item-title">
+        {{ getSession(1) | sessionName }}
+      </h1>
+    </div>
+    <div class="menu-item menu-item-autumn"
+         [sessionType]="getSession(2)"
+         (click)="selectedSession = getSession(2)">
+      <h1 class="item-title">
+        {{ getSession(2) | sessionName }}
+      </h1>
+    </div>
+    <div class="menu-item menu-item-winter"
+         [sessionType]="getSession(3)"
+         (click)="selectedSession = getSession(3)">
+      <h1 class="item-title">
+        {{ getSession(3) | sessionName }}
+      </h1>
+    </div>
+  </div>
+  <div class="trips-content">
+    <app-trips-session class="trip-session"
+                       [session]="getSession(0)"
+                       *ngIf="selectedSession == getSession(0)">
+
+    </app-trips-session>
+    <app-trips-session class="trip-session"
+                       [session]="getSession(1)"
+                       *ngIf="selectedSession == getSession(1)">
+
+    </app-trips-session>
+    <app-trips-session class="trip-session"
+                       [session]="getSession(2)"
+                       *ngIf="selectedSession == getSession(2)">
+
+    </app-trips-session>
+    <app-trips-session class="trip-session"
+                       [session]="getSession(3)"
+                       *ngIf="selectedSession == getSession(3)">
+
+    </app-trips-session>
+  </div>
+</div>
+

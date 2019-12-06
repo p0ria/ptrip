@@ -1,19 +1,27 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { RoomModule } from './room/room.module';
-import { AuthModule } from './auth/auth.module';
-import { AppController } from './app.controller';
-import { MeModule } from './me/me.module';
-import {SocketModule} from "./socket/socket.module";
+import { AppController } from './controllers/app.controller';
+import {TypeOrmModule} from "@nestjs/typeorm";
+import {PassportModule} from "@nestjs/passport";
+import {JwtModule} from "@nestjs/jwt";
+import {jwtConstants} from "./auth/strategies/constants";
+import {SERVICES} from "./services";
+import {ENTITIES} from "./models/entities";
+import {STRATEGIES} from "./auth/strategies";
+import {CONTROLLERS} from "./controllers";
+import {GUARDS} from "./guards";
+import {SocketGateway} from "./socket/socket.gateway";
 
 @Module({
   imports: [
       TypeOrmModule.forRoot(),
-      RoomModule,
-      AuthModule,
-      MeModule,
-      SocketModule
+      TypeOrmModule.forFeature([...ENTITIES]),
+      PassportModule,
+      JwtModule.register({
+        secret: jwtConstants.secret,
+        signOptions: { expiresIn: '10h' }
+      })
   ],
-  controllers: [AppController]
+  controllers: [AppController, ...CONTROLLERS],
+  providers: [...SERVICES, ...STRATEGIES, ...GUARDS, SocketGateway]
 })
 export class AppModule {}

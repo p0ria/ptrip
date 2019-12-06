@@ -1,19 +1,15 @@
 import {NgModule} from "@angular/core";
-import {SharedModule} from "../shared/shared.module";
 import {COMPONENTS} from "./components";
 import {MasterRoutingModule} from "./master-routing.module";
-import {StoreModule} from "@ngrx/store";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   imports: [
     MasterRoutingModule,
-    SharedModule,
-    StoreModule.forFeature('master', {})
+    CommonModule
   ],
-  declarations: [
-    ...COMPONENTS,
-  ]
+  declarations: [...COMPONENTS]
 })
-export class MasterModule{
+export class MasterModule {
 
 }

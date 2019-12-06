@@ -1,0 +1,30 @@
+.trip-session {
+  .session-header {
+
+  }
+
+  .session-content {
+    .trip-list {
+      .trip-item {
+
+      }
+    }
+
+
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .trip-session {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    .session-content {
+      grid-column: 1;
+      grid-row: 1;
+      padding: 50px 10px;
+    }
+  }
+}

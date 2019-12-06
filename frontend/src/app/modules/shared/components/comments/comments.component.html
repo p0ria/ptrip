@@ -1,0 +1,15 @@
+<div class="comments">
+  <div class="comments-new">
+    <div class="new-input">
+      <textarea #f placeholder="لطفا نظر خود را بنویسید..."></textarea>
+    </div>
+    <div class="new-btn" (click)="emitAddComment(f.value)">
+      <h4>افزودن نظر</h4>
+    </div>
+  </div>
+  <div class="comments-list">
+    <app-comment *ngFor="let comment of comments"
+                 [comment]="comment">
+    </app-comment>
+  </div>
+</div>

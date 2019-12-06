@@ -1,0 +1,8 @@
+<div class="trip-detail" >
+  <app-carousel [images]="getImages()"></app-carousel>
+  <div class="divider"></div>
+  <app-comments
+    (addComment)="addComment($event)"
+    [comments]="trip?.comments"></app-comments>
+</div>
+

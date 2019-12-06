@@ -1,9 +1,13 @@
-import {AuthService} from "./auth.service";
-import {RoomService} from "./room.service";
-import {ChatService} from "./chat.service";
+import {TripService} from "./trip.service";
+import {SocketService} from "./socket.service";
+import {DomService} from "./dom.service";
+import {ModalService} from "./modal.service";
+import {LoginService} from "./login.service";
 
-export const PROVIDERS = [
-  AuthService,
-  RoomService,
-  ChatService
+export const SERVICES = [
+  TripService,
+  SocketService,
+  DomService,
+  ModalService,
+  LoginService
 ];

@@ -1,0 +1,1 @@
+export type durationType = "1 day" | "2 days" | "3 days";

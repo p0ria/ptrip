@@ -1,8 +1,9 @@
-import {NgModule} from "@angular/core";
 import {SocketIoConfig, SocketIoModule} from "ngx-socket-io";
+import {environment} from "../environments/environment";
+import {NgModule} from "@angular/core";
 
 const config: SocketIoConfig = {
-  url: 'http://localhost:3000', options: {transports: ['websocket']}
+  url: environment.socketUrl, options: {transports: ['websocket']}
 };
 
 @NgModule({
@@ -13,4 +14,6 @@ const config: SocketIoConfig = {
     SocketIoModule
   ]
 })
-export class SocketModule{}
+export class SocketModule {
+
+}

@@ -1,3 +1,37 @@
-master-header{
-  width: 100%;
+.master {
+  height: 100%;
+  .master-header {
+    background-color: antiquewhite;
+  }
+
+  .master-content {
+    background-color: #fcfcfc;
+  }
+
+  .master-footer {
+    background-color: #000;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .master {
+    display: grid;
+    grid-template-columns: 1fr 900px 1fr;
+    grid-template-rows: 50px 1fr 100px;
+
+    .master-header {
+      grid-row: 1;
+      grid-column: 2;
+    }
+
+    .master-content {
+      grid-row: 2;
+      grid-column: 2;
+    }
+
+    .master-footer {
+      grid-row: 3;
+      grid-column: 2;
+    }
+  }
 }

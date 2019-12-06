@@ -1,0 +1,14 @@
+<div class="trip-session">
+  <div class="session-header">
+  </div>
+  <div class="session-content">
+    <div class="trip-list">
+      <app-trip-item
+        class="trip-item"
+        *ngFor="let trip of trips"
+        [trip]="trip">
+      </app-trip-item>
+    </div>
+  </div>
+  <div class="session-footer"></div>
+</div>

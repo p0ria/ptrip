@@ -1,0 +1,19 @@
+<div class="trip-item">
+  <div class="trip-item-fig" [bgi]="trip.backgroundImageUrl">
+    <div class="trip-item-fig-cover"></div>
+    <div class="trip-item-fig-content">
+      <h3 class="trip-item-fig-content-title">{{trip.name}}</h3>
+    </div>
+    <div class="trip-item-fig-register">
+      <a class="trip-link" [routerLink]="['trips', trip.id]">
+        <h4>ثبت نام</h4>
+      </a>
+
+    </div>
+  </div>
+  <div class="trip-item-des">
+    <ul class="trip-item-des-items">
+      <li class="trip-item-des-item">{{trip.description}}</li>
+    </ul>
+  </div>
+</div>

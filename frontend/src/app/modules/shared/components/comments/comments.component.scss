@@ -1,0 +1,73 @@
+.comments {
+  * {
+    font-family: "A Soraya", sans-serif;
+  }
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr;
+  grid-row-gap: 20px;
+
+  .comments-new {
+    grid-column: 1;
+    grid-row: 1;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 30px;
+
+    .new-input {
+      grid-column: 1;
+      grid-row: 1;
+
+      textarea {
+        width: 100%;
+        min-height: 50px;
+        border-radius: 3px;
+        border: 1px solid #5292b4;
+        font-size: 11px;
+        padding: 10px;
+        color: #616161;
+        resize: vertical;
+      }
+    }
+
+    .new-btn {
+      grid-column: 1;
+      grid-row: 2;
+      background-color: #5292b460;
+      width: 200px;
+      justify-self: center;
+      text-align: center;
+      border-radius: 3px;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, .7);
+      padding: 5px;
+      cursor: pointer;
+      font-size: 12px;
+      color: #5292b4;
+
+      &:hover {
+        background-color: #5292B4A0;
+      }
+    }
+
+  }
+
+  .comments-list {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 20px 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-rows: 70px;
+    grid-auto-flow: row;
+    grid-row-gap: 10px;
+
+    app-comment {
+      grid-column: 1;
+    }
+  }
+
+}

@@ -1,15 +1,18 @@
-@import 'themes';
-
-@import '~@nebular/theme/styles/globals';
-
-@include nb-install() {
-  @include nb-theme-global();
-};
 /* You can add global styles to this file, and also import other style files */
 
+@import "assets/sass/fonts";
+@import "assets/sass/form";
+
+* {
+  direction: rtl;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 html, body {
   height: 100%;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  background-color: #355060;
+}

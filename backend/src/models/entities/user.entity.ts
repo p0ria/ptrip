@@ -1,34 +1,33 @@
-import { Column, Entity, JoinColumn, JoinTable, ManyToMany, OneToMany, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { Room } from './room.entity';
-import { RoomChat } from './room.chat.entity';
-import { UserCredential } from './user.credential.entity';
+import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import {RoleType} from "../enums/role.enum";
+import {Dto} from "../dto.interface";
 
+@Entity({name: "Users"})
+export class User implements Dto {
+    
+    @PrimaryGeneratedColumn()
+    id: number;
+    
+    @Column()
+    firstname: string;
+    
+    @Column()
+    lastname: string;
+    
+    @Column({unique: true})
+    username: string;
+    
+    @Column()
+    password: string;
+    
+    @Column()
+    role: RoleType;
 
-@Entity()
-export class User {
-
-  @PrimaryGeneratedColumn()
-  id: number;
-
-  @Column()
-  username: string;
-
-  @Column({nullable: true})
-  avatarUrlRelative: string;
-
-  @Column()
-  role: string;
-
-  @OneToOne(type => UserCredential, uc => uc.user, { cascade: true })
-  credential!: UserCredential;
-
-  @ManyToMany(type => Room, room => room.users)
-  @JoinTable()
-  rooms: Room[];
-
-  @OneToMany(type => RoomChat, roomChats => roomChats.user)
-  roomChats!: RoomChat[];
-
-  @OneToMany(type => Room, room => room.admin)
-  roomAdmins: Room[];
+    toDto(): any {
+        let {password, ...rest} = this;
+        return {
+            ...rest,
+            fullname: `${this.firstname} ${this.lastname}`
+        };
+    }
 }

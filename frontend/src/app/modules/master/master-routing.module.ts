@@ -1,26 +1,26 @@
-import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
 import {MasterComponent} from "./components/master/master.component";
+import {NgModule} from "@angular/core";
 
 const routes: Routes = [
-  { path: '', component: MasterComponent,
+  {
+    path: '', component: MasterComponent,
     children: [
-      { path: '', redirectTo: 'rooms', pathMatch: 'full' },
       {
-        path: 'rooms',
-        loadChildren: () => import('../room/room.module').then(m => m.RoomModule)
+        path: '',
+        pathMatch: 'full',
+        loadChildren: () => import('../trip/trip.module').then(m => m.TripModule)
       },
       {
-        path: 'join',
-        loadChildren: () => import('../join/join.module').then(m => m.JoinModule)
+        path: 'trips',
+        loadChildren: () => import('../trip/trip.module').then(m => m.TripModule)
       }
-    ]},
+    ]
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MasterRoutingModule {
-
-}
+export class MasterRoutingModule {}

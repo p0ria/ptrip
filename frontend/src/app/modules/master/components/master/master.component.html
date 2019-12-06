@@ -1,14 +1,11 @@
-<nb-layout>
-  <nb-layout-header fixed>
-    <master-header></master-header>
-  </nb-layout-header>
-
-  <nb-sidebar>
-    <master-sidenav></master-sidenav>
-  </nb-sidebar>
-
-  <nb-layout-column>
+<div class="master">
+  <header class="master-header">
+    <app-header></app-header>
+  </header>
+  <section class="master-content">
     <router-outlet></router-outlet>
-  </nb-layout-column>
-
-</nb-layout>
+  </section>
+  <footer class="master-footer">
+    <app-footer></app-footer>
+  </footer>
+</div>

@@ -1,0 +1,32 @@
+<div class="login">
+  <div class="login-title">
+    <h3>ورود به نرم افزار</h3>
+  </div>
+  <div class="login-inputs">
+    <form class="form" [formGroup]="loginForm">
+      <div class="form-control">
+        <label for="username">نام کاربری:</label>
+        <input id="username" name="username" type="text"
+               formControlName="username">
+      </div>
+      <div class="form-control">
+        <label for="password">کلمه عبور:</label>
+        <input id="password" name="password" type="password"
+               formControlName="password">
+      </div>
+    </form>
+  </div>
+  <div class="login-errors" *ngIf="errors">
+    <div class="login-error"
+         *ngFor="let error of errors">
+      <p>{{error}}</p>
+    </div>
+  </div>
+  <div class="login-buttons">
+    <button class="btn btnSubmit"
+            [disabled]="!loginForm.valid"
+            (click)="enter()">ورود</button>
+    <button class="btn btnCancel" (click)="cancel()">انصراف</button>
+  </div>
+</div>
+

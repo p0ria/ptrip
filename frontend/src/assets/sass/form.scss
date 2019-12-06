@@ -1,0 +1,38 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: none;
+  grid-auto-rows: auto;
+  grid-auto-flow: row;
+  grid-row-gap: 20px;
+
+  * {
+    font-family: "A Soraya", sans-serif;
+  }
+
+  .form-control {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-rows: 30px;
+    grid-auto-flow: row;
+    grid-row-gap: 20px;
+    align-items: center;
+    margin: 10px 20px;
+
+
+    label {
+      text-align: start;
+      color: white;
+    }
+
+    input[type=text], input[type=password] {
+      padding: 5px;
+      font-size: 16px;
+
+    }
+
+  }
+}
+
+

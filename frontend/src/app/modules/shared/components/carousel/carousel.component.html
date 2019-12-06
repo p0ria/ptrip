@@ -1,0 +1,24 @@
+<div class="carousel">
+  <div class="carousel-content">
+    <div class="carousel-content-arrow arrow-left" (click)="scrollLeft()">
+    </div>
+    <div class="carousel-content-images" #imagesCtrl>
+      <img *ngFor="let image of images"
+           class="carousel-image"
+           [src]="image"
+      >
+    </div>
+    <div class="carousel-content-arrow arrow-right" (click)="scrollRight()">
+    </div>
+  </div>
+  <div class="carousel-thumbs">
+    <div class="carousel-thumb"
+         [class.selected]="selectedIndex == i"
+         *ngFor="let image of images;let i = index"
+         (click)="select(i)">
+      <img class="thumb-image"
+           [src]="image">
+    </div>
+  </div>
+
+</div>
